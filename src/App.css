@@ -1,38 +1,258 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+.form-container {
+  width: 60vw;
+  position: relative;
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+nav {
+  height: 50px;
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+nav .Logo {
+  font-size: 2.7rem;
+  color: #286efa;
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.5px;
+  margin-left: 1rem;
+}
+
+nav .steps {
+  font-family: "Open Sans", sans-serif;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding-right: 5px;
+  font-size: 0.9rem;
+}
+
+nav .dot {
+  margin: 5px 7px 5px 15px;
+  height: 5px;
+  width: 5px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+nav .dot:nth-child(2) {
+  background-color: gray;
+}
+
+nav .dot:nth-child(3) {
+  background-color: gray;
+}
+
+.link-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+}
+
+.links {
+  text-decoration: none;
+  color: #286efa;
+  font-weight: 700;
+}
+
+.inputContent-btn {
+  width: 100%;
+  height: 45px;
+  background-color: #286efa;
   color: white;
+  border: none;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.text_label {
+  padding-top: 5px !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.textfield {
+  border: none !important;
 }
+
+.textfield:hover {
+  border: none !important;
+  outline: none !important;
+}
+
+.textfield:focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.form {
+  width: 400px;
+  height: 100vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  margin-left: -200px;
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+.form .inputContent {
+  background-color: rgba(253, 253, 253, 0.7);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form .inputContent .inputContent .error input {
+  border-color: #e74c3c;
+}
+
+.form .inputContent .inputContent .error .inputLabel {
+  color: #e74c3c;
+}
+
+.form .inputContent .inputContent .success input {
+  border: 1px solid #286efa;
+}
+
+.form .inputContent .inputLabel {
+  position: absolute;
+  font-size: 0.7rem;
+  -webkit-transform: translate(10px, -7px);
+          transform: translate(10px, -7px);
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+.form .inputContent small {
+  visibility: hidden;
+  background-color: rgba(253, 253, 253, 0.7);
+  display: inline-block;
+  padding-top: 5px;
+}
+
+.form .inputContent p {
+  color: gray;
+  font-size: 0.9rem;
+  margin-top: 7px;
+}
+
+.form .inputContent input {
+  width: 100%;
+  font-family: inherit;
+  height: 33px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  background-color: rgba(253, 253, 253, 0.7);
+}
+
+.form .inputContent input::-webkit-input-placeholder {
+  color: #727272;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+
+.form .inputContent input:-ms-input-placeholder {
+  color: #727272;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+
+.form .inputContent input::-ms-input-placeholder {
+  color: #727272;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+
+.form .inputContent input::placeholder {
+  color: #727272;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+
+.form .custom-select {
+  font-family: inherit;
+  height: 33px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  color: #727272;
+  background-color: rgba(253, 253, 253, 0.7);
+  font-size: 0.9rem;
+  padding-left: 10px;
+  width: 100%;
+}
+
+.form .custom-select .select-item {
+  color: #727272;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.form .eye {
+  position: absolute;
+  right: 5px;
+  -webkit-transform: translate(0%, -170%);
+          transform: translate(0%, -170%);
+  font-size: 0.7rem;
+  color: #727272;
+}
+
+.inputContent .error input {
+  border-color: #e74c3c;
+}
+
+.inputContent .error .inputLabel {
+  color: #e74c3c;
+}
+
+.inputContent .success input {
+  border: 1px solid #286efa;
+}
+
+.blue-container {
+  background-color: #286efa;
+  color: white;
+  height: 100vh;
+  width: 40vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=App.css.map */

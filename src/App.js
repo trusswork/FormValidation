@@ -2,8 +2,8 @@ import "./App.scss";
 import { useState } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
-import IconButton from '@material-ui/core/IconButton';
-
+import IconButton from "@material-ui/core/IconButton";
+import { FormControl } from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
@@ -45,7 +45,27 @@ const useStyles = makeStyles((theme) => ({
       margin: 10,
       width: 500,
     },
+    "& .MuiSvgIcon-fontSizeSmall": {
+      fontSize: "1rem",
+    },
+    "& .MuiInputBase-input": {
+      border: "1px solid rgba(253, 253, 253, 0.7)",
+    },
+    " & .MuiOutlinedInput-notchedOutline": {
+      padding: 5,
+    },
+    "& .MuiOutlinedInput-input": {
+      padding: "14px",
+    },
+    "& .MuiInputLabel-outlined": {
+      paddingTop: 3,
+    },
+    "& .MuiInputLabel-outlined.MuiInputLabel-shrink": {
+      transform: " translate(14px, -4px) scale(.75)",
+      padding: "3px 0",
+    },
   },
+
   passwordStyles: {
     margin: 15,
     width: 500,
@@ -124,83 +144,90 @@ function App() {
             <h2>Let's set up your account</h2>
             <p className="link-text">
               Already have an account?&nbsp;
-              <a class="links" href=" ">
+              <a className="links" href=" ">
                 Sign up
               </a>
             </p>
-            <TextField
-              className={classes.textField}
-              error={nameInvalid}
-              value={values.name}
-              id="outlined-basic"
-              label="Name"
-              variant="outlined"
-              name="name"
-              helperText={emailInvalid ? "please enter your name" : ""}
-              onChange={handleChange}
-              InputProps={{
-                className: classes.input,
-              }}
-              InputLabelProps={{ className: "text_label" }}
-            />
-            <TextField
-              InputLabelProps={{ className: "text_label" }}
-              error={emailInvalid}
-              value={values.email}
-              id="outlined-basic"
-              label="Email"
-              variant="outlined"
-              name="email"
-              helperText={emailInvalid ? "please enter valid emaild" : ""}
-              onChange={handleChange}
-            />
-            <TextField
-              id="outlined-select-currency"
-              error={optionInValid}
-              select
-              label="Select"
-              value={values.option}
-              onChange={handleChange}
-              helperText={optionInValid ? "Please select your currency " : ""}
-              variant="outlined"
-              InputLabelProps={{ className: "text_label" }}
-            >
-              {currencies.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              ))}
-            </TextField>
-
-            <TextField
-              // id="outlined-adornment-password"
-              error={passwordInvalid}
-              className={classes.textField}
-              variant="outlined"
-              type={values.showPassword ? "text" : "password"}
-              helperText={passwordInvalid ? "Minimum 6 characters" : ""}
-              label="Password"
-              value={values.password}
-              onChange={handleChange}
-              InputProps={{
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <IconButton
-                      aria-label="toggle password visibility"
-                      onClick={handleClickShowPassword}
-                      onMouseDown={handleMouseDownPassword}
-                      edge="end"
-                    >
-                      {values.showPassword ? (
-                        <VisibilityOffIcon fontSize="small" />
-                      ) : (
-                        <VisibilityIcon fontSize="small" />
-                      )}
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
+            <FormControl>
+              <TextField
+                className={classes.textField}
+                error={nameInvalid}
+                value={values.name}
+                id="outlined-basic"
+                label="Name"
+                variant="outlined"
+                name="name"
+                helperText={emailInvalid ? "please enter your name" : ""}
+                onChange={handleChange}
+                InputProps={{
+                  className: classes.input,
+                }}
+                InputLabelProps={{ className: "text_label" }}
+              />
+            </FormControl>
+            <FormControl>
+              <TextField
+                InputLabelProps={{ className: "text_label" }}
+                error={emailInvalid}
+                value={values.email}
+                id="outlined-basic"
+                label="Email"
+                variant="outlined"
+                name="email"
+                helperText={emailInvalid ? "please enter valid emaild" : ""}
+                onChange={handleChange}
+              />
+            </FormControl>
+            <FormControl>
+              <TextField
+                id="outlined-select-currency"
+                error={optionInValid}
+                select
+                label="Select"
+                value={values.option}
+                onChange={handleChange}
+                helperText={optionInValid ? "Please select your currency " : ""}
+                variant="outlined"
+                InputLabelProps={{ className: "text_label" }}
+              >
+                {currencies.map((option) => (
+                  <MenuItem key={option.value} value={option.value}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+            </FormControl>
+            <FormControl>
+              <TextField
+                id="outlined-adornment-password"
+                error={passwordInvalid}
+                className={classes.textField}
+                variant="outlined"
+                type={values.showPassword ? "text" : "password"}
+                helperText={passwordInvalid ? "Minimum 6 characters" : ""}
+                label="Password"
+                value={values.password}
+                onChange={handleChange}
+                InputProps={{
+                  endAdornment: (
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label="toggle password visibility"
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        edge="end"
+                      >
+                        {values.showPassword ? (
+                          <VisibilityOffIcon fontSize="small" />
+                        ) : (
+                          <VisibilityIcon fontSize="small" />
+                        )}
+                      </IconButton>
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </FormControl>
             <button
               className="inputContent-btn"
               type="submit"
@@ -215,7 +242,7 @@ function App() {
                 Terms of service
               </a>
               &nbsp;and&nbsp;
-              <a class="links" href=" ">
+              <a className="links" href=" ">
                 Privacy policy
               </a>{" "}
             </p>

@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Header />
         <Route>
-          <AnimatePresence initial={true} exitBeforeEnter>
+          <AnimatePresence  exitBeforeEnter>
             <Switch>
               <Route exact path="/" render={() => <Home />} />
             </Switch>

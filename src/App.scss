@@ -5,12 +5,78 @@ $PrimaryFont: "Oswald", sans-serif;
 $SecondaryFont: "Open Sans", sans-serif;
 $Background: rgba(253, 253, 253, 0.7);
 $InputColor: rgb(228, 228, 228);
+$white: #ffffff;
+$black: #0c0c0a;
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
+}
+//Header
+header {
+  font-size: 16px;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  font-weight: "700";
+  // background: white;
+
+  .header-container {
+    padding: 1rem;
+    .row {
+      height: 90px;
+      display: flex;
+      justify-content: space-between;
+      .logo {
+        a {
+          font-family: $PrimaryFont;
+          color: $black;
+          text-decoration: none;
+          font-size: 1.5rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+        }
+      }
+      .menu {
+        color: $white;
+        cursor: pointer;
+        border-radius: 100%;
+        border: 2px solid $white;
+        height: 80px;
+        width: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          color: $white;
+          background: $black;
+          border-color: $black;
+        }
+      }
+    }
+  }
+}
+//home
+.home-conatiner {
+  background: $PrimaryColor;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a {
+  text-decoration: none;
+}
+.home-logo {
+  color: white;
+  font-size: 5rem;
+  font-family: $PrimaryFont;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .container {
@@ -114,8 +180,9 @@ nav {
     height: 100%;
   }
 
-  .blue-container h1 {
-    padding: 20px;
+  .blueLogo {
+    font-size: 3rem;
+    padding: 10px;
   }
   .blue-container-desc {
     margin-top: 20px;

@@ -76,7 +76,16 @@ a {
   font-size: 5rem;
   font-family: $PrimaryFont;
   text-align: center;
-  letter-spacing: 1px;
+  span {
+    display: inline-block;
+    position: relative;
+    font-weight: 400;
+    font-size: 5rem;
+    font-family: $PrimaryFont;
+    @media (max-width: 1440px) {
+      font-size: 128px;
+    }
+  }
 }
 
 .container {
